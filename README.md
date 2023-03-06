@@ -1,2 +1,6 @@
 # MI_Network
-In-game network for jobs, employment, housing, and other essentials
+Ox_Core based network for jobs, employment, housing, and other essentials
+
+## Work in progress:
+- task
+
