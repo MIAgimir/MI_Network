@@ -1,6 +1,8 @@
 # MI_Network
-Ox_Core based network for jobs, employment, housing, and other essentials
+### Work in progress:
+- feature here_
 
-## Work in progress:
-- task
-
+### Docs:
+- [CFX Docs](https://docs.fivem.net/docs/)
+- [OverExtended](https://overextended.github.io/docs)
+- [Project Error](https://projecterror.dev/docs/)
