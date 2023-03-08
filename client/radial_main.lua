@@ -24,6 +24,8 @@ exports('MI_Network:menu_handler', function(menu, item)
     end
 end)
 
+
+
 -- use link to change icons for menu(s)
 -- https://fontawesome.com/search?o=r&new=yes&s=thin
 
@@ -34,8 +36,9 @@ lib.addRadialItem({
         label = 'MI_Net',
         icon = 'globe',
         menu = 'networkmenu_loaded',
-        --onSelect = function()
-        --end
+        onSelect = function()
+            load_tablet()
+        end
     },
     { -- load user radial menu
         id = 'user_menu',
@@ -68,5 +71,26 @@ lib.addRadialItem({
         menu = 'alertmenu_loaded',
         --onSelect = function()
         --end
+    }
+})
+
+-- user menu
+lib.RegisterRadial({
+    id = 'usermenu_loaded',
+    items = {
+        {
+            label = 'User Info',
+            icon = 'user',
+            onSelect = function()
+                TriggerEvent('mium_userinfo')
+            end
+        },
+        {
+            label = 'Home Menu',
+            icon = 'house',
+            onSelect = function()
+                print('option_')
+            end
+        },
     }
 })
