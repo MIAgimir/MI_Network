@@ -41,6 +41,34 @@ local function netconnect()
     })
 end
 
+local function userinfo()
+    local data = lib.callback.await('test_1', false)
+    if data then
+        for i = 1, #data do
+            local row = data[i]
+            lib.registerContext({
+                id = 'user_info',
+                title = 'User Information',
+                options = {
+                    {
+                    title = row.firstname,
+                    },
+                    {
+                    title = row.lastname,
+                    },
+                    {
+                    title = row.gender,
+                    },
+                    {
+                    title = row.phone_number,
+                    },
+                }
+            })
+        end
+    end
+    lib.showContext('user_info')
+end
+
 -- use link to change icons for menu(s)
 -- https://fontawesome.com/search?o=r&new=yes&s=thin
 
@@ -57,9 +85,9 @@ lib.registerRadial({
         },
         {
         label = 'User Info',
-        icon = 'magnifying-glass',
+        icon = 'user',
         onSelect = function()
-            print('context')
+            userinfo()
         end
         },
         {
@@ -185,3 +213,32 @@ lib.addRadialItem({
     }
 })
   
+local display = false
+RegisterCommand("uion", function()
+    Citizen.CreateThread(function()
+        TriggerEvent('netui_on', true)
+    end)
+end)
+
+
+RegisterCommand("uioff", function()
+    Citizen.CreateThread(function()
+        TriggerEvent("netui_off", true)
+    end)
+end)
+
+RegisterNetEvent('netui_on')
+AddEventHandler('netui_on', function()
+    SendNUIMessage({
+        type = 'ui',
+        display = true
+    })
+end)
+
+RegisterNetEvent('netui_off')
+AddEventHandler('netui_off', function()
+    SendNUIMessage({
+        type = 'ui',
+        display = false
+    })
+end)

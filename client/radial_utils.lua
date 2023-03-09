@@ -7,6 +7,7 @@ chunk()
 -- creating local variables --
 local debug = Config.Debug
 
+
 -- templates --
 --[[ for notifications
 RegisterNetEvent('mirm_notification', function()
@@ -44,6 +45,3 @@ RegisterNetEvent('mirm_prompt', function(header_ctx, content_ctx)
 end)
 ]]
 
-RegisterNetEvent('mium_userinfo', function()
-
-end)

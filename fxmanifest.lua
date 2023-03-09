@@ -30,3 +30,10 @@ server_scripts {
     'server/server_main.lua',
     'server/server_main.js'
 }
+
+files {
+    'web/index.html',
+    'web/listenter.js',
+    'web/reset.css',
+    'web/style.css'
+}
