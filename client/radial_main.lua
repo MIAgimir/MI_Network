@@ -6,6 +6,7 @@ chunk()
 
 -- creating local variables --
 local debug = Config.Debug
+local display = false
 
 exports('MI_Network:menu_handler', function(menu, item)
     print(menu, item)
@@ -212,33 +213,3 @@ lib.addRadialItem({
         end
     }
 })
-  
-local display = false
-RegisterCommand("uion", function()
-    Citizen.CreateThread(function()
-        TriggerEvent('netui_on', true)
-    end)
-end)
-
-
-RegisterCommand("uioff", function()
-    Citizen.CreateThread(function()
-        TriggerEvent("netui_off", true)
-    end)
-end)
-
-RegisterNetEvent('netui_on')
-AddEventHandler('netui_on', function()
-    SendNUIMessage({
-        type = 'ui',
-        display = true
-    })
-end)
-
-RegisterNetEvent('netui_off')
-AddEventHandler('netui_off', function()
-    SendNUIMessage({
-        type = 'ui',
-        display = false
-    })
-end)
