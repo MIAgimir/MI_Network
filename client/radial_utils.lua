@@ -47,23 +47,3 @@ end)
 RegisterNetEvent('mium_userinfo', function()
 
 end)
-
--- open tablet notif. = 'connected to network'
-RegisterNetEvent('mirm_netconnect', function()
-    if debug == true then
-        print('net_connected')
-    end
-    exports.scully_emotemenu:PlayByCommand('tablet2')
-    lib.notify({
-        id = 'net_connect_notif',
-        title = 'MI_Network',
-        description = 'You are now connected',
-        position = 'top-right',
-        style = {
-            backgroundColor = '#141517',
-            color = '#909296'
-        },
-        icon = 'wifi',
-        iconColor = '#C53030'
-    })
-end)
