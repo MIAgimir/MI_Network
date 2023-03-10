@@ -5,7 +5,6 @@ local chunk = assert(load(import, ('@@ox_core/%s'):format(file)))
 chunk()
 
 -- local variables --
-local resourcename = 'ox_core'
 local players = {}
 local table = lib.table
 
@@ -47,11 +46,6 @@ AddEventHandler('playerLogout', function(source)
     players[source] = nil
 end)
 
-RegisterServerEvent('mioxjob:checkservice')
-AddEventHandler('mioxjob:checkservice', function(job)
-    local player = source
-    player.hasGroup()
-end)
 
 lib.callback.register('mioxjob:checkservice', function(source, target)
     return players[target or source]

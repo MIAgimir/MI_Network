@@ -169,7 +169,7 @@ lib.addRadialItem({
         icon = 'briefcase',
         menu = 'work_menu',
         onSelect = function()
-        print("Business")
+        print("work")
         end
     },
     { -- menu: user_menu 
@@ -178,7 +178,7 @@ lib.addRadialItem({
         icon = 'user',
         menu = 'user_menu',
         onSelect = function()
-        print("Business")
+        print("user")
         end
     },
     { -- menu: alert_menu
@@ -187,7 +187,7 @@ lib.addRadialItem({
         icon = 'shield-halved',
         menu = 'alert_menu',
         onSelect = function()
-        print("Business")
+        print("alert")
         end
     }
 })
