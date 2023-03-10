@@ -96,14 +96,15 @@ lib.registerRadial({
         label = 'Check in',
         icon = 'circle-check',
         onSelect = function()
-            print('housing')
+            print('checking in')
+            exports['MI_Job']:radial_checkin()
         end
         },
         {
         label = 'Req. work car',
         icon = 'truck',
         onSelect = function()
-            print('context')
+            print('checking out')
         end
         },
         {
@@ -111,6 +112,7 @@ lib.registerRadial({
         icon = 'list-check',
         onSelect = function()
             print('appearance')
+            exports['MI_Job']:assignment_check()
         end
         },
         {
@@ -124,7 +126,8 @@ lib.registerRadial({
         label = 'Checkout',
         icon = 'circle-xmark',
         onSelect = function()
-            print('housing')
+            print('checking out')
+            exports['MI_Job']:radial_checkout()
         end
         }        
     }
