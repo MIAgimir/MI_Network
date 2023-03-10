@@ -15,14 +15,6 @@ description 'In-game network for jobs, employment, housing, and other essentials
 shared_script '@ox_lib/init.lua'
 shared_script 'config.lua'
 
-ui_page 'nui/nui.html'
-files {
-    'nui/img/*.png',
-    'nui/nui.html',
-    'nui/script.js',
-    'nui/style.css'
-}
-
 client_scripts {
     '@ox_core/imports/client.lua',
     'client/nui_main.lua',
@@ -37,3 +29,14 @@ server_scripts {
     'server/server_main.lua'
 }
 
+ui_page 'nui/nui.html'
+files {
+    'nui/img/*.png',
+    'nui/nui.html',
+    'nui/script.js',
+    'nui/style.css',
+    
+    'apps/cmnd/cmnd.html',
+    'apps/cmnd/cmnd.css',
+    'apps/cmnd/cmnd.js',
+}
