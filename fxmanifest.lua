@@ -28,15 +28,3 @@ server_scripts {
 
     'server/server_main.lua'
 }
-
-ui_page 'nui/nui.html'
-files {
-    'nui/img/*.png',
-    'nui/nui.html',
-    'nui/script.js',
-    'nui/style.css',
-    
-    'apps/cmnd/cmnd.html',
-    'apps/cmnd/cmnd.css',
-    'apps/cmnd/cmnd.js',
-}

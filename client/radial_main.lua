@@ -23,25 +23,6 @@ exports('MI_Network:menu_handler', function(menu, item)
     end
 end)
 
-local function netconnect()
-    if debug == true then
-        print('net_connected')
-    end
-    exports.scully_emotemenu:PlayByCommand('tablet2')
-    lib.notify({
-        id = 'net_connect_notif',
-        title = 'MI_Network',
-        description = 'You are now connected',
-        position = 'top-right',
-        style = {
-            backgroundColor = '#E5E5E5',
-            color = '#4B0087'
-        },
-        icon = 'wifi',
-        iconColor = '#FCD112'
-    })
-end
-
 local function userinfo()
     local data = lib.callback.await('test_1', false)
     if data then
@@ -193,14 +174,6 @@ lib.addRadialItem({
         menu = 'user_menu',
         onSelect = function()
         print("Business")
-        end
-    },
-    { -- menu: network_menu
-        id = 'network',
-        label = 'Network',
-        icon = 'globe',
-        onSelect = function()
-        netconnect()
         end
     },
     { -- menu: alert_menu
