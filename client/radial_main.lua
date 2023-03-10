@@ -98,6 +98,7 @@ lib.registerRadial({
         onSelect = function()
             print('checking in')
             exports['MI_Job']:radial_checkin()
+            exports['MI_Job']:setplayerservice()
         end
         },
         {
