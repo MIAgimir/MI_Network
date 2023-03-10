@@ -12,9 +12,16 @@ repository 'https://github.com/MIAgimir/MI_Network'
 description 'In-game network for jobs, employment, housing, and other essentials'
 
 -- resource manifest --
-ui_page 'html/ui.html'
 shared_script '@ox_lib/init.lua'
 shared_script 'config.lua'
+
+ui_page 'nui/nui.html'
+files {
+    'nui/img/*.png',
+    'nui/nui.html',
+    'nui/script.js',
+    'nui/style.css'
+}
 
 client_scripts {
     '@ox_core/imports/client.lua',
@@ -30,9 +37,3 @@ server_scripts {
     'server/server_main.lua'
 }
 
-files {
-    'html/ui.html',
-    'html/ui.js',
-    'html/reset.css',
-    'html/ui.css'
-}

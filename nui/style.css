@@ -1,0 +1,10 @@
+.tablet-base {
+    height: 75%;
+    width: 65%;
+
+    position: absolute;
+
+    bottom: 20%;
+    left: 20%;
+
+}
