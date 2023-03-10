@@ -6,6 +6,8 @@ chunk()
 
 -- local variables --
 local resourcename = 'ox_core'
+local players = {}
+local table = lib.table
 
 -- get user information for user_info context menu --
 lib.callback.register('test_1', function()
@@ -16,4 +18,41 @@ end)
 lib.callback.register('test_2', function()
     local result = MySQL.query.await('SELECT * FROM character_groups WHERE charid = 6', {playerIdentifier})
     return result
+end)
+
+-- Player Service Actions --
+CreateThread(function()
+    for _, player in pairs(Ox.GetPlayers(true, { groups = Config.JobGroup })) do
+        local inService = player.get('inService')
+        if inService and table.contains(Config.JobGroup, inService) then
+            players[player.source] = player
+        end
+    end
+end)
+
+RegisterNetEvent('setPlayerInService', function(group)
+    local player = Ox.GetPlayer(source)
+    if player then
+        if group and table.contains(Config.JobGroup, group) 
+        and player.hasGroup(Config.JobGroup) then
+            players[source] = player
+            return player.set('inService', group, true)
+        end
+        player.set('inService', false, true)
+    end
+    players[source] = nil
+end)
+
+AddEventHandler('playerLogout', function(source)
+    players[source] = nil
+end)
+
+RegisterServerEvent('mioxjob:checkservice')
+AddEventHandler('mioxjob:checkservice', function(job)
+    local player = source
+    player.hasGroup()
+end)
+
+lib.callback.register('mioxjob:checkservice', function(source, target)
+    return players[target or source]
 end)

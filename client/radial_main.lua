@@ -98,7 +98,7 @@ lib.registerRadial({
         onSelect = function()
             print('checking in')
             exports['MI_Job']:radial_checkin()
-            exports['MI_Job']:setplayerservice()
+            TriggerServerEvent('setPlayerInService')
         end
         },
         {
@@ -129,6 +129,7 @@ lib.registerRadial({
         onSelect = function()
             print('checking out')
             exports['MI_Job']:radial_checkout()
+            TriggerServerEvent('setPlayerInService')
         end
         }        
     }
