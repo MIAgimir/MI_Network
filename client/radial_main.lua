@@ -51,7 +51,7 @@ local function userinfo()
     lib.showContext('user_info')
 end
 
--- use link to change icons for menu(s)
+-- use link to change icons for menus
 -- https://fontawesome.com/search?o=r&new=yes&s=thin
 
 -- user menu
