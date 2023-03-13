@@ -62,7 +62,8 @@ lib.registerRadial({
         label = 'Housing',
         icon = 'house',
         onSelect = function()
-            print('housing')
+            print('testing')
+            exports['MI_Housing']:open_userhousingmenu()
         end
         },
         {
